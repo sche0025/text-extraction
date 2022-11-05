@@ -9,6 +9,7 @@ app = Flask(__name__)
 config = r"--psm 11 --oem 3"
 
 UPLOAD_FOLDER = 'static/uploads/'
+app.secret_key = "secret_key"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
