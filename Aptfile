@@ -3,5 +3,8 @@ libxrender1
 libfontconfig1
 libice6
 libgl1
-libpng12-0
 tesseract-ocr
+build-essential
+libpoppler-cpp-dev
+pkg-config
+python3-dev
