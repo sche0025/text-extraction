@@ -8,4 +8,5 @@ build-essential
 libpoppler-cpp-dev
 pkg-config
 python3-dev
-libpng12-0
+libpng-dev
+poppler-utils
