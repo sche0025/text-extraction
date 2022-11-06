@@ -1,3 +1,5 @@
+import time
+
 from flask import Flask, flash, request, redirect, url_for, render_template
 import os
 import cv2
@@ -21,9 +23,12 @@ def allowed_file(filename):
 @app.route('/')
 def home():
     arr = os.listdir(UPLOAD_FOLDER)
-    print(arr)
     for file in arr:
-        os.remove(os.path.join(app.config['UPLOAD_FOLDER'], file))
+        path = os.path.join(app.config['UPLOAD_FOLDER'], file)
+        now = time.time()
+        modified_time = os.path.getmtime(path)
+        if(now - modified_time > 10):
+            os.remove(path)
     return render_template('index.html')
 
 @app.route('/', methods=['POST'])
